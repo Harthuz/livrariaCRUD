@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="./assets/excluir.css">
+    <link rel="stylesheet" href="../assets/css/excluir.css">
 </head>
 <body>
     <?php
@@ -32,12 +32,12 @@
             </div>
 
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
             <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['txtcodigo'])) {
-                    include_once 'Livro.php';
+                    include_once '../models/Livro.php';
                     $l = new Livro();
                     $l->setCodigo($_POST['txtcodigo']);
                     $livro_mostrar = $l->exclusao1();
@@ -85,7 +85,7 @@
 
             <?php
             if (isset($_POST['confirmar_exclusao']) && isset($_POST['codigo_confirmado'])) {
-                include_once 'Livro.php';
+                include_once '../models/Livro.php';
                 $l = new Livro();
                 $l->setCodigo($_POST['codigo_confirmado']);
                 echo "<div class='message'>" . $l->exclusao() . "</div>";
@@ -107,12 +107,12 @@
             </div>
 
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
             <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['txtcodigo'])) {
-                    include_once 'Autor.php';
+                    include_once '../models/Autor.php';
                     $a = new Autor();
                     $a->setCodigo($_POST['txtcodigo']);
                     $autor_mostrar = $a->exclusao1();
@@ -158,7 +158,7 @@
 
             <?php
             if (isset($_POST['confirmar_exclusao']) && isset($_POST['codigo_confirmado'])) {
-                include_once 'Autor.php';
+                include_once '../models/Autor.php';
                 $a = new Autor();
                 $a->setCodigo($_POST['codigo_confirmado']);
                 echo "<div class='message'>" . $a->exclusao() . "</div>";
@@ -181,12 +181,12 @@
             </div>
 
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
             <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['txtcodigo']) && isset($_POST['txtcodigo2'])) {
-                    include_once 'Autoria.php';
+                    include_once '../models/Autoria.php';
                     $a = new Autoria();
                     $a->setCodigoLivro($_POST['txtcodigo']);
                     $a->setCodigoAutor($_POST['txtcodigo2']);
@@ -232,7 +232,7 @@
 
             <?php
             if (isset($_POST['confirmar_exclusao']) && isset($_POST['codigo_confirmado']) && isset($_POST['codigo_confirmado2'])) {
-                include_once 'Autoria.php';
+                include_once '../models/Autoria.php';
                 $a = new Autoria();
                 $a->setCodigoAutor($_POST['codigo_confirmado']);
                 $a->setCodigoLivro($_POST['codigo_confirmado2']);

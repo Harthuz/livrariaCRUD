@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="./assets/cadastrar.css">
+    <link rel="stylesheet" href="../assets/css/cadastrar.css">
 </head>
 <body>
     <center><h1>Cadastrar</h1></center>
@@ -32,7 +32,7 @@
                 </fieldset>
             </form>
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
         </div>
         <div class="tab-content" id="tab2">
@@ -52,7 +52,7 @@
                 </fieldset>
             </form>
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
         </div>
         <div class="tab-content" id="tab3">
@@ -72,7 +72,7 @@
                 </fieldset>
             </form>
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
                 switch ($form_type) {
                     case 'livro':
                         if (isset($btenviar_livro)) {
-                            include_once 'Livro.php';
+                            include_once '../models/Livro.php';
                             $livro = new Livro();
                             $livro->setTitulo($titulo);
                             $livro->setCategoria($categoria);
@@ -97,7 +97,7 @@
 
                     case 'autor':
                         if (isset($btenviar_autor)) {
-                            include_once 'Autor.php';
+                            include_once '../models/Autor.php';
                             $autor = new Autor();
                             $autor->setNome($nome);
                             $autor->setSobrenome($sobrenome);
@@ -109,7 +109,7 @@
 
                     case 'autoria':
                         if (isset($btenviar_autoria)) {
-                            include_once 'Autoria.php';
+                            include_once '../models/Autoria.php';
                             $autoria = new Autoria();
                             $autoria->setCodigoAutor($autor);
                             $autoria->setCodigoLivro($livro);

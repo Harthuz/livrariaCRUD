@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="./assets/pesquisar.css">
+    <link rel="stylesheet" href="../assets/css/pesquisar.css">
 </head>
 <body>
     <?php
@@ -17,6 +17,9 @@
         <div class="tab <?php echo ($activeTab === 'tab2') ? 'active' : ''; ?>" data-tab="tab2">Autor</div>
         <div class="tab <?php echo ($activeTab === 'tab3') ? 'active' : ''; ?>" data-tab="tab3">Autoria</div>
         </div>
+
+
+        
         <div class="tab-content <?php echo ($activeTab === 'tab1') ? 'active' : ''; ?>" id="tab1">
             <form method="POST">
                 <input type="hidden" name="activeTab" value="tab1">
@@ -29,7 +32,7 @@
             <?php
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (isset($_POST['txtpesquisar'])) {
-                        include_once 'Livro.php';
+                        include_once '../models/Livro.php';
                         $l = new Livro();
                         $l->setTitulo($_POST['txtpesquisar']);
                         $livros = $l->consultar();
@@ -73,9 +76,12 @@
                 }            
                 ?>
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
         </div>
+
+
+
         <div class="tab-content <?php echo ($activeTab === 'tab2') ? 'active' : ''; ?>" id="tab2">
             <form method="POST">
                 <input type="hidden" name="activeTab" value="tab2">
@@ -88,7 +94,7 @@
             <?php
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (isset($_POST['txtpesquisar'])) {
-                        include_once 'Autor.php';
+                        include_once '../models/Autor.php';
                         $a = new Autor();
                         $a->setNome($_POST['txtpesquisar']);
                         $autores = $a->consultar();
@@ -130,7 +136,7 @@
                 }            
                 ?>
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
         </div>
         <div class="tab-content <?php echo ($activeTab === 'tab3') ? 'active' : ''; ?>" id="tab3">
@@ -145,7 +151,7 @@
             <?php
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (isset($_POST['txtpesquisar'])) {
-                        include_once 'Autoria.php';
+                        include_once '../models/Autoria.php';
                         $a = new Autoria();
                         $a->setEditora($_POST['txtpesquisar']);
                         $editoras = $a->consultar();
@@ -185,7 +191,7 @@
                 }            
                 ?>
             <div class="button-container">
-                <a href="index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao-voltar">Voltar</a>
             </div>
         </div>
     </div>

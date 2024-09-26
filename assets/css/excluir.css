@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tabs {
+    display: flex;
+    margin-left: 5px;
+}
+
+.tab {
+    padding: 15px 25px;
+    cursor: pointer;
+    background-color: #202124;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.form-excluir{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.formInputExcluir{
+    display: grid;
+    justify-content: center;
+}
+
+.form-excluir input[name="txtcodigo"] {
+    border-radius: 5px;
+    margin-right: 10px;    
+    width: 120px;
+}
+.form-excluir input[name="txtcodigo2"] {
+    border-radius: 5px;
+    margin-right: 10px;    
+    width: 120px;
+}
+
+.message{
+    display: grid;
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+}
+
+.form-excluir button {
+    background-color: #3C3D41;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.form-excluir button:hover {
+    background-color: #2c2c2c;
+}
+
+.tab:hover, .tab.active {
+    background-color: #3C3D41;
+}
+
+.tab.active {
+    background-color: #9c9c9c;
+    color: #ffffff;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    
+}
+
+.tab-content.active {
+    display: block;
+    justify-content: center;
+    display: grid;
+}
+
+.tabform{
+    display: grid;
+    justify-content: center;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+p {
+    margin: 10px 0;
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+input[type="submit"], input[type="reset"] {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.botao-voltar {
+    background-color: #3C3D41;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.botao-voltar:hover {
+    background-color: #2c2c2c;
+}
+
+#botaoConfirmar{
+    background-color: #3C3D41;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin: 20px 0px 0px 0px;
+}
+
+#botaoConfirmar:hover {
+    background-color: #2c2c2c;
+}
+
+.formConfirmar {
+    display: grid;
+    justify-content: right;
+}
+
+/* Estilos para a tabela */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.tabelaEstilo {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabelaEstilo thead th {
+    background-color: #202124;
+    color: #fff;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.tabelaEstilo tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabelaEstilo tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tabelaEstilo tbody tr:hover {
+    background-color: #f1f1f1;
+}

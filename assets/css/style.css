@@ -1,0 +1,89 @@
+    .buttonall{
+        display: flex;
+        align-items: center;
+    }
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .circlebutton {
+        background-color: #3C3D41;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        margin-right: -60px;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .circlebutton img{
+        height: 38px;
+    }
+
+    .button {
+        background-color: #202124;
+        width: 198px;
+        height: 50PX;
+        border-radius: 40px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button p {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13pt;
+        margin-left: 10px;
+        margin-left: 47px;
+    }
+
+    .botaoListar{
+        border: none;
+        background: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+    }
+
+    .containerBotoes{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .containerBotoes a{
+        text-decoration: none;
+    }
+
+    .menuDrop{
+        background-color:#9c9c9c;
+        border-radius: 30px;
+        margin-top: -50px;
+        padding: 60px 10px 10px 10px;
+    }
+
+    .texto p{
+        font-size: 10pt;
+        color: white;
+        font-weight: bold;
+    }
+
+    .opcao{
+        display: flex;
+    }
+
+    .opcao img{
+        margin-right: 10px;
+    }
+
+    .op{
+        background-color: #202124;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }

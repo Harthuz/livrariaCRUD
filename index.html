@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script>
+        function listarFunction() {
+            const menuDrop = document.querySelector('.menuDrop');
+            menuDrop.classList.toggle('show');
+        }
+    </script>
+    <title>Menu</title>
+</head>
+<body>
+    <div class="containerBotoes">
+        <a href="pesquisar.php">
+            <div class="buttonall"- onclick="">
+                <div class="circlebutton">
+                    <img src="./img/pesquisar.png" alt="">
+                </div>
+                <div class="button">
+                    <div>
+                        <p>PESQUISAR</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="cadastrar.php">
+            <div class="buttonall">
+                <div class="circlebutton">
+                    <img src="./img/cadastrar.png" alt="">
+                </div>
+                <div class="button">
+                    <div>
+                        <p>CADASTRAR</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="listarMenuDrop">
+            <a href="listar.php">
+                <div class="buttonall">
+                    <div class="circlebutton">
+                        <img src="./img/listar.png" alt="">
+                    </div>
+                    <div class="button">
+                        <div>
+                            <p>LISTAR</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div class="menuDrop">
+                <a href="listarAutor.php">
+                    <div class="op">
+                        <div class="opcao">
+                            <div class="texto">
+                                <p>AUTOR</p>
+                            </div> 
+                        </div>
+                    </div>
+                </a>
+                <a href="listarAutoria.php">
+                    <div class="op">
+                        <div class="opcao">
+                            <div class="imagem">
+                                <img src="./img/autoria.png" alt="">
+                            </div>
+                            <div class="texto">
+                                <p>AUTORIA</p>
+                            </div> 
+                        </div>
+                    </div>
+                </a>
+                <a href="listarLivro.php">
+                    <div class="op">
+                        <div class="opcao">
+                            <div class="imagem">
+                                <img src="./img/livro.png" alt="">
+                            </div>
+                            <div class="texto">
+                                <p>LIVRO</p>
+                            </div> 
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <a href="">
+            <div class="buttonall">
+                <div class="circlebutton">
+                    <img src="./img/alterar.png" alt="">
+                </div>
+                <div class="button">
+                    <div>
+                        <p>ALTERAR</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="excluir.php    ">
+            <div class="buttonall">
+                <div class="circlebutton">
+                    <img src="./img/excluir.png" alt="">
+                </div>
+                <div class="button">
+                    <div>
+                        <p>EXCLUIR</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <style>
+        .menuDrop {
+            display: none;
+        }
+
+        .menuDrop.show {
+            display: block;
+        }
+    </style>
+</body>
+</html>

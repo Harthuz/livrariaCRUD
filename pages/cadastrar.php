@@ -32,7 +32,7 @@
                 </fieldset>
             </form>
             <div class="button-container">
-                <a href="../index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao">Voltar</a>
             </div>
         </div>
         <div class="tab-content" id="tab2">
@@ -72,7 +72,7 @@
                 </fieldset>
             </form>
             <div class="button-container">
-                <a href="../index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao">Voltar</a>
             </div>
         </div>
     </div>

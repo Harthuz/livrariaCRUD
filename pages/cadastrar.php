@@ -27,8 +27,8 @@
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>
-                    <input name="btenviar_livro" type="submit" value="Cadastrar"> &nbsp;&nbsp;
-                    <input name="limpar" type="reset" value="Limpar">
+                    <input class="botao" name="btenviar_livro" type="submit" value="Cadastrar"> &nbsp;&nbsp;
+                    <input class="botao" name="limpar" type="reset" value="Limpar">
                 </fieldset>
             </form>
             <div class="button-container">
@@ -47,12 +47,12 @@
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>
-                    <input name="btenviar_autor" type="submit" value="Cadastrar"> &nbsp;&nbsp;
-                    <input name="limpar" type="reset" value="Limpar">
+                    <input class="botao" name="btenviar_autor" type="submit" value="Cadastrar"> &nbsp;&nbsp;
+                    <input class="botao" name="limpar" type="reset" value="Limpar">
                 </fieldset>
             </form>
             <div class="button-container">
-                <a href="../index.html" class="botao-voltar">Voltar</a>
+                <a href="../index.html" class="botao">Voltar</a>
             </div>
         </div>
         <div class="tab-content" id="tab3">
@@ -67,8 +67,8 @@
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>
-                    <input name="btenviar_autoria" type="submit" value="Cadastrar"> &nbsp;&nbsp;
-                    <input name="limpar" type="reset" value="Limpar">
+                    <input class="botao" name="btenviar_autoria" type="submit" value="Cadastrar"> &nbsp;&nbsp;
+                    <input class="botao" name="limpar" type="reset" value="Limpar">
                 </fieldset>
             </form>
             <div class="button-container">

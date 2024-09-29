@@ -4,122 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script>
-        function listarFunction() {
-            const menuDrop = document.querySelector('.menuDrop');
-            menuDrop.classList.toggle('show');
-        }
-    </script>
-    <title>Menu</title>
+    <title>Menu de Ações</title>
 </head>
 <body>
-    <div class="containerBotoes">
-        <a href="./pages/pesquisar.php">
-            <div class="buttonall"- onclick="">
-                <div class="circlebutton">
-                    <img src="./assets/images/icon_pesquisar.png" alt="">
-                </div>
-                <div class="button">
-                    <div>
-                        <p>PESQUISAR</p>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="./pages/cadastrar.php">
-            <div class="buttonall">
-                <div class="circlebutton">
-                    <img src="./assets/images/icon_cadastrar.png" alt="">
-                </div>
-                <div class="button">
-                    <div>
-                        <p>CADASTRAR</p>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="listarMenuDrop">
-            <a href="./pages/listar.php">
-                <div class="buttonall">
-                    <div class="circlebutton">
-                        <img src="./assets/images/icon_listar.png" alt="">
-                    </div>
-                    <div class="button">
-                        <div>
-                            <p>LISTAR</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <div class="menuDrop">
-                <a href="listarAutor.php">
-                    <div class="op">
-                        <div class="opcao">
-                            <div class="texto">
-                                <p>AUTOR</p>
-                            </div> 
-                        </div>
-                    </div>
-                </a>
-                <a href="listarAutoria.php">
-                    <div class="op">
-                        <div class="opcao">
-                            <div class="imagem">
-                                <img src="./img/autoria.png" alt="">
-                            </div>
-                            <div class="texto">
-                                <p>AUTORIA</p>
-                            </div> 
-                        </div>
-                    </div>
-                </a>
-                <a href="listarLivro.php">
-                    <div class="op">
-                        <div class="opcao">
-                            <div class="imagem">
-                                <img src="./img/livro.png" alt="">
-                            </div>
-                            <div class="texto">
-                                <p>LIVRO</p>
-                            </div> 
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <header>
+        <div class="header">
+            <p>LIVRARIA</p>
         </div>
-        <a href="">
-            <div class="buttonall">
-                <div class="circlebutton">
-                    <img src="./assets/images/icon_alterar.png" alt="">
-                </div>
-                <div class="button">
-                    <div>
-                        <p>ALTERAR</p>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="./pages/excluir.php">
-            <div class="buttonall">
-                <div class="circlebutton">
-                    <img src="./assets/images/icon_excluir.png" alt="">
-                </div>
-                <div class="button">
-                    <div>
-                        <p>EXCLUIR</p>
-                    </div>
-                </div>
-            </div>
-        </a>
+    </header>
+    
+    <div class="btn_container" id="btn_container">
+        <!--script.js -->
     </div>
-    <style>
-        .menuDrop {
-            display: none;
-        }
 
-        .menuDrop.show {
-            display: block;
-        }
-    </style>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

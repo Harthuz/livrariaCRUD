@@ -40,15 +40,15 @@
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($livro_bd as $livro_mostrar) {
+                            foreach ($livro_bd as $livro) {
                             ?>
                                 <tr>
-                                    <td><?php echo $livro_mostrar[0]; ?></td>
-                                    <td><?php echo $livro_mostrar[1]; ?></td>
-                                    <td><?php echo $livro_mostrar[2]; ?></td>
-                                    <td><?php echo $livro_mostrar[3]; ?></td>
-                                    <td><?php echo $livro_mostrar[4]; ?></td>
-                                    <td><?php echo $livro_mostrar[5]; ?></td>
+                                    <td><?php echo $livro[0]; ?></td>
+                                    <td><?php echo $livro[1]; ?></td>
+                                    <td><?php echo $livro[2]; ?></td>
+                                    <td><?php echo $livro[3]; ?></td>
+                                    <td><?php echo $livro[4]; ?></td>
+                                    <td><?php echo $livro[5]; ?></td>
                                 </tr>
                             <?php
                             } ?>

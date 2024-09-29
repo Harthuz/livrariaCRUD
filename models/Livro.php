@@ -154,5 +154,37 @@ class Livro{
             echo "Erro ao executar consulta. " . $exc->getMessage();
         }
     }
+
+    function alterar() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from Livro where Titulo like ?");
+            @$sql->bindParam(1, $this->getTitulo(), PDO::PARAM_STR);
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } catch (PDOException $exc) {
+            echo "Erro ao alterar. " . $exc->getMessage();
+        }
+    }
+
+    function alterar2() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("update Livro set Titulo = ?, Categoria = ?, ISBN = ?, Idioma = ?, QtdPag = ? where Cod_livro = ?");
+            @$sql->bindParam(1, $this->getTitulo(), PDO::PARAM_STR);
+            @$sql->bindParam(2, $this->getCategoria(), PDO::PARAM_STR);
+            @$sql->bindParam(3, $this->getISBN(), PDO::PARAM_STR);
+            @$sql->bindParam(4, $this->getIdioma(), PDO::PARAM_STR);
+            @$sql->bindParam(5, $this->getPaginas(), PDO::PARAM_STR);
+            @$sql->bindParam(6, $this->getCodigo(), PDO::PARAM_STR);
+            if ($sql->execute() == 1) {
+                return "Registro alterado com sucesso!";
+            }
+            $this->conn = null;
+        } catch (PDOException $exc) {
+            echo "Erro ao salvar o registro. " . $exc->getMessage();
+        }
+    }
 }
 ?>

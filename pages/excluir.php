@@ -40,9 +40,9 @@
                     include_once '../models/Livro.php';
                     $l = new Livro();
                     $l->setCodigo($_POST['txtcodigo']);
-                    $livro_mostrar = $l->exclusao1();
+                    $livro = $l->exclusao1();
 
-                    if ($livro_mostrar) {
+                    if ($livro) {
                         ?>
                         <div class="tabelaContainer" style="margin-top: 30px;">
                             <table class="tabelaEstilo">
@@ -58,12 +58,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $livro_mostrar['Cod_livro']; ?></td>
-                                        <td><?php echo $livro_mostrar['Titulo']; ?></td>
-                                        <td><?php echo $livro_mostrar['Categoria']; ?></td>
-                                        <td><?php echo $livro_mostrar['ISBN']; ?></td>
-                                        <td><?php echo $livro_mostrar['Idioma']; ?></td>
-                                        <td><?php echo $livro_mostrar['QtdPag']; ?></td>
+                                        <td><?php echo $livro['Cod_livro']; ?></td>
+                                        <td><?php echo $livro['Titulo']; ?></td>
+                                        <td><?php echo $livro['Categoria']; ?></td>
+                                        <td><?php echo $livro['ISBN']; ?></td>
+                                        <td><?php echo $livro['Idioma']; ?></td>
+                                        <td><?php echo $livro['QtdPag']; ?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -71,7 +71,7 @@
                         <div class="formConfirmar">
                             <form method="POST">
                                 <input type="hidden" name="activeTab" value="tab1">
-                                <input type="hidden" name="codigo_confirmado" value="<?php echo $livro_mostrar['Cod_livro']; ?>">
+                                <input type="hidden" name="codigo_confirmado" value="<?php echo $livro['Cod_livro']; ?>">
                                 <button type="submit" name="confirmar_exclusao" id="botaoConfirmar">Confirmar Exclusão</button>
                             </form>
                         </div>

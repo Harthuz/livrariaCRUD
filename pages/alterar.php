@@ -4,7 +4,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Cadastro</title>
-            <link rel="stylesheet" href="../assets/css/cadastrar.css">
+            <link rel="stylesheet" href="../assets/css/alterar.css">
         </head>
         <body>
             <center><h1>Alterar</h1></center>
@@ -17,43 +17,103 @@
                 <div class="tab-content active" id="tab1">
 
                     <div class="consultar">
-                        
-                        <form name="livro" method="POST" action="">
-                            <input type="hidden" name="form_type" value="livro">
+                        <form method="POST" action="">
+                            <input type="hidden" name="form_name" value="alterar1">
                             <fieldset>
                                 <legend>Alterando</legend>
                                 <p>Digite o nome do livro que deseja alterar:</p>
-                                <input type="text" placeholder="Nome do livro">
+                                <input type="text" placeholder="Nome do livro" name="txtnome">
                                 <br>
-                                <input type="submit" value="Consultar" name="btnconsultar">
+                                <input class="botao" type="submit" value="Consultar" name="btnconsultar">
                             </fieldset>
                         </form>
-
                     </div>
 
-                    <div class="alterar" hidden>
+                    <?php
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar1') {
+                            extract($_POST, EXTR_OVERWRITE);
+                            if(isset($btnconsultar)) {
+                                $txtnome = $_POST['txtnome'];
+                                include_once '../models/Livro.php';
+                                $l = new Livro();
+                                $l->setTitulo($txtnome);
+                                $livro = $l->alterar();
+                            }
 
-                    <form name="livro" method="POST" action="">
-                        <input type="hidden" name="form_type" value="livro">
-                        <fieldset id="a">
-                            <legend><b>Dados do Livro</b></legend>
-                            <p>Título: <input name="titulo" type="text" size="40" maxlength="100" placeholder="Título do Livro" required></p>
-                            <p>Categoria: <input name="categoria" type="text" size="40" maxlength="40" placeholder="Categoria" required></p>
-                            <p>ISBN: <input name="isbn" type="text" size="40" maxlength="20" placeholder="ISBN" required></p>
-                            <p>Idioma: <input name="idioma" type="text" size="40" maxlength="20" placeholder="Idioma" required></p>
-                            <p>Quantidade de Páginas: <input name="qtd_pag" type="number" size="40" placeholder="Quantidade de Páginas" required></p>
-                        </fieldset>
-                        <fieldset id="b">
-                            <legend><b>Opções:</b></legend>
-                            <input name="btenviar_livro" type="submit" value="Alterar"> &nbsp;&nbsp;
-                            <input name="limpar" type="reset" value="Limpar">
-                        </fieldset>
-                    </form>
+                            if ($livro) {
 
-                    </div>
+                                foreach($livro as $livro_mostrar){
+
+                                ?>
+
+                                <div class="alterar">
+
+                                <form method="POST" action="">
+                                    <input type="hidden" name="form_name" value="alterar2">
+                                    <fieldset id="a">
+                                        <legend><b>Dados do Livro</b></legend>
+                                        <p>Código Livro: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $livro_mostrar[0] ?>" required></p>
+                                        <p>Título: <input name="titulo" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $livro_mostrar[1] ?>" required></p>
+                                        <p>Categoria: <input name="categoria" type="text" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $livro_mostrar[2] ?>" required></p>
+                                        <p>ISBN: <input name="isbn" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $livro_mostrar[3] ?>" required></p>
+                                        <p>Idioma: <input name="idioma" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $livro_mostrar[4] ?>" required></p>
+                                        <p>Quantidade de Páginas: <input name="qtd_pag" type="number" size="40" placeholder="Quantidade de Páginas" value="<?php echo $livro_mostrar[5] ?>" required></p>
+                                    </fieldset>
+                                    <fieldset id="b">
+                                        <legend><b>Opções:</b></legend>
+                                        <input class="botao" name="btnalterar" type="submit" value="Alterar"> &nbsp;&nbsp;
+                                    </fieldset>
+                                </form>
+
+                                </div>
+
+                                <?php
+                                    }
+                                ?>
+
+                                <?php
+                            } else {
+                                echo "<div class='message'><b><p>Nome do livro não encontrado.</p></b></div>";
+                            }
+                        }
+                    ?>
+
+                    <?php
+                        if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar2') {
+                            extract($_POST, EXTR_OVERWRITE);
+                            if (isset($btnalterar)) {
+                                include_once '../models/Livro.php';
+                                $l = new Livro();
+
+                                $codigo = $_POST['codigo'];
+                                $titulo = $_POST['titulo'];
+                                $categoria = $_POST['categoria'];
+                                $isbn = $_POST['isbn'];
+                                $idioma = $_POST['idioma'];
+                                $paginas = $_POST['qtd_pag'];
+                                
+                                $l->setCodigo($codigo);
+                                $l->setTitulo($titulo);
+                                $l->setCategoria($categoria);
+                                $l->setISBN($isbn);
+                                $l->setIdioma($idioma);
+                                $l->setPaginas($paginas);
+                                
+                                $resultado = $l->alterar2();
+                                
+                                
+                                if ($resultado) {
+                                    echo $resultado;
+                                } else {
+                                    echo $resultado;
+                                }
+                            }
+                        }
+
+                    ?>
                     
                     <div class="button-container">
-                        <a href="../index.html" class="botao-voltar">Voltar</a>
+                        <a href="../index.html" class="botao">Voltar</a>
                     </div>
 
                 </div>
@@ -74,7 +134,7 @@
                         </fieldset>
                     </form>
                     <div class="button-container">
-                        <a href="../index.html" class="botao-voltar">Voltar</a>
+                        <a href="../index.html" class="botao">Voltar</a>
                     </div>
                 </div>
                 <div class="tab-content" id="tab3">
@@ -94,19 +154,10 @@
                         </fieldset>
                     </form>
                     <div class="button-container">
-                        <a href="../index.html" class="botao-voltar">Voltar</a>
+                        <a href="../index.html" class="botao">Voltar</a>
                     </div>
                 </div>
             </div>
-
-            <?php
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    extract($_POST, EXTR_OVERWRITE);
-                    if(isset($btnconsultar)) {
-                        
-                    }
-                }
-            ?>
 
             <script>
                 document.querySelectorAll('.tab').forEach(tab => {

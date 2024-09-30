@@ -38,11 +38,11 @@
                 <input type="hidden" name="activeTab" value="tab3">
                 <input type="hidden" name="form_name" value="alterar2">
                 <fieldset id="a">
-                    <legend><b>Dados do Autoria</b></legend>
-                    <p>Código Autor: <input name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
-                    <p>Código Livro: <input name="nome" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
-                    <p>Data DataLancamento: <input name="sobrenome" type="date" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
-                    <p>Editora: <input name="email" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
+                    <legend><b>Dados Autoria</b></legend>
+                    <p>Código Autor: <input name="cod_autor" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
+                    <p>Código Livro: <input name="cod_livro" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
+                    <p>Data DataLancamento: <input name="data_lancamento" type="date" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
+                    <p>Editora: <input name="editora" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>
@@ -67,8 +67,8 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar2') {
         extract($_POST, EXTR_OVERWRITE);
         if (isset($btnalterar)) {
-            include_once '../../../models/Autor.php';
-            $a = new Autor();
+            include_once '../../../models/Autoria.php';
+            $a = new Autoria();
 
             $codigo = $_POST['codigo'];
             $nome = $_POST['nome'];

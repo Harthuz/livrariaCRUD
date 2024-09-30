@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 28-Maio-2024 às 19:31
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.0.13
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 30/09/2024 às 11:28
+-- Versão do servidor: 8.3.0
+-- Versão do PHP: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,19 +26,21 @@ USE `bd_autoria`;
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `autor`
+-- Estrutura para tabela `autor`
 --
 
-CREATE TABLE `autor` (
-  `Cod_autor` int(11) NOT NULL,
+DROP TABLE IF EXISTS `autor`;
+CREATE TABLE IF NOT EXISTS `autor` (
+  `Cod_autor` int NOT NULL AUTO_INCREMENT,
   `NomeAutor` varchar(50) NOT NULL,
   `Sobrenome` varchar(50) NOT NULL,
   `Email` varchar(100) NOT NULL,
-  `Nasc` date NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+  `Nasc` date NOT NULL,
+  PRIMARY KEY (`Cod_autor`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Extraindo dados da tabela `autor`
+-- Despejando dados para a tabela `autor`
 --
 
 INSERT INTO `autor` (`Cod_autor`, `NomeAutor`, `Sobrenome`, `Email`, `Nasc`) VALUES
@@ -56,18 +58,19 @@ INSERT INTO `autor` (`Cod_autor`, `NomeAutor`, `Sobrenome`, `Email`, `Nasc`) VAL
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `autoria`
+-- Estrutura para tabela `autoria`
 --
 
-CREATE TABLE `autoria` (
-  `Cod_autor` int(11) NOT NULL,
-  `Cod_livro` int(11) NOT NULL,
+DROP TABLE IF EXISTS `autoria`;
+CREATE TABLE IF NOT EXISTS `autoria` (
+  `Cod_autor` int NOT NULL,
+  `Cod_livro` int NOT NULL,
   `DataLancamento` date NOT NULL,
   `Editora` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Extraindo dados da tabela `autoria`
+-- Despejando dados para a tabela `autoria`
 --
 
 INSERT INTO `autoria` (`Cod_autor`, `Cod_livro`, `DataLancamento`, `Editora`) VALUES
@@ -85,65 +88,35 @@ INSERT INTO `autoria` (`Cod_autor`, `Cod_livro`, `DataLancamento`, `Editora`) VA
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `livro`
+-- Estrutura para tabela `livro`
 --
 
-CREATE TABLE `livro` (
-  `Cod_livro` int(11) NOT NULL,
+DROP TABLE IF EXISTS `livro`;
+CREATE TABLE IF NOT EXISTS `livro` (
+  `Cod_livro` int NOT NULL AUTO_INCREMENT,
   `Titulo` varchar(50) NOT NULL,
   `Categoria` varchar(50) NOT NULL,
   `ISBN` varchar(30) NOT NULL,
   `Idioma` varchar(30) NOT NULL,
-  `QtdPag` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `QtdPag` int NOT NULL,
+  PRIMARY KEY (`Cod_livro`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Extraindo dados da tabela `livro`
+-- Despejando dados para a tabela `livro`
 --
 
 INSERT INTO `livro` (`Cod_livro`, `Titulo`, `Categoria`, `ISBN`, `Idioma`, `QtdPag`) VALUES
 (1, 'Cem Anos de Solidão', 'Ficção', '978-85-01-10000-0', 'Português', 417),
 (2, 'Orgulho e Preconceito', 'Romance', '978-85-01-10001-7', 'Inglês', 279),
 (3, 'Dom Quixote', 'Clássico', '978-85-01-10002-4', 'Espanhol', 1023),
-(4, '1984', 'Distopia', '978-85-01-10003-1', 'Inglês', 328),
+(4, '1984', 'Distopiaa', '978-85-01-10003-1', 'Inglês', 328),
 (5, 'O Alquimista', 'Ficção', '978-85-01-10004-8', 'Português', 208),
 (6, 'O Pequeno Príncipe', 'Infantil', '978-85-01-10005-5', 'Francês', 96),
 (7, 'A Revolução dos Bichos', 'Ficção', '978-85-01-10006-2', 'Inglês', 112),
 (8, 'Drácula', 'Terror', '978-85-01-10007-9', 'Inglês', 416),
 (9, 'Frankenstein', 'Terror', '978-85-01-10008-6', 'Inglês', 280),
 (10, 'A Insustentável Leveza do Ser', 'Drama', '978-85-01-10009-3', 'Checo', 320);
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `autor`
---
-ALTER TABLE `autor`
-  ADD PRIMARY KEY (`Cod_autor`);
-
---
--- Índices para tabela `livro`
---
-ALTER TABLE `livro`
-  ADD PRIMARY KEY (`Cod_livro`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `autor`
---
-ALTER TABLE `autor`
-  MODIFY `Cod_autor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de tabela `livro`
---
-ALTER TABLE `livro`
-  MODIFY `Cod_livro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

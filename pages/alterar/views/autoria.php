@@ -70,17 +70,15 @@
             include_once '../../../models/Autoria.php';
             $a = new Autoria();
 
-            $codigo = $_POST['codigo'];
-            $nome = $_POST['nome'];
-            $sobrenome = $_POST['sobrenome'];
-            $email = $_POST['email'];
-            $nasc = $_POST['nasc'];
+            $cod_autor = $_POST['cod_autor'];
+            $cod_livro = $_POST['cod_livro'];
+            $data_lancamento = $_POST['data_lancamento'];
+            $editora = $_POST['editora'];
             
-            $a->setCodigo($codigo);
-            $a->setNome($nome);
-            $a->setSobrenome($sobrenome);
-            $a->setEmail($email);
-            $a->setNasc($nasc);
+            $a->setCodigoAutor($cod_autor);
+            $a->setCodigoLivro($cod_livro);
+            $a->setDataLancamento($data_lancamento);
+            $a->setEditora($editora);
             
             $resultado = $a->alterar2();
             

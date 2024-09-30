@@ -66,7 +66,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar2') {
         extract($_POST, EXTR_OVERWRITE);
         if (isset($btnalterar)) {
-            include_once '../models/Livro.php';
+            include_once '../../models/Livro.php';
             $a = new Livro();
 
             $codigo = $_POST['codigo'];

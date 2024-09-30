@@ -21,43 +21,43 @@
             $a = new Livro();
             $a->setTitulo($txtnome);
             $livro = $a->alterar();
-        }
 
-        if ($livro) {
+            if ($livro) {
 
-            foreach($livro as $autoria_mostrar){
-
-            ?>
-
-            <div class="alterar">
-
-            <form method="POST" action="">
-                <input type="hidden" name="activeTab" value="tab1">
-                <input type="hidden" name="form_name" value="alterar2">
-                <fieldset id="a">
-                    <legend><b>Dados do Livro</b></legend>
-                    <p>Código Livro: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
-                    <p>Título: <input name="titulo" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
-                    <p>Categoria: <input name="categoria" type="text" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
-                    <p>ISBN: <input name="isbn" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
-                    <p>Idioma: <input name="idioma" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $autoria_mostrar[4] ?>" required></p>
-                    <p>Quantidade de Páginas: <input name="qtd_pag" type="number" size="40" placeholder="Quantidade de Páginas" value="<?php echo $autoria_mostrar[5] ?>" required></p>
-                </fieldset>
-                <fieldset id="b">
-                    <legend><b>Opções:</b></legend>
-                    <input class="botao" name="btnalterarlivro" type="submit" value="Alterar"> &nbsp;&nbsp;
-                </fieldset>
-            </form>
-
-            </div>
-
-            <?php
-                }
-            ?>
-
-            <?php
-        } else {
-            echo "<div class='message'><b><p>Nome do livro não encontrado.</p></b></div>";
+                foreach($livro as $autoria_mostrar){
+    
+                ?>
+    
+                <div class="alterar">
+    
+                <form method="POST" action="">
+                    <input type="hidden" name="activeTab" value="tab1">
+                    <input type="hidden" name="form_name" value="alterar2">
+                    <fieldset id="a">
+                        <legend><b>Dados do Livro</b></legend>
+                        <p>Código Livro: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
+                        <p>Título: <input name="titulo" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
+                        <p>Categoria: <input name="categoria" type="text" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
+                        <p>ISBN: <input name="isbn" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
+                        <p>Idioma: <input name="idioma" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $autoria_mostrar[4] ?>" required></p>
+                        <p>Quantidade de Páginas: <input name="qtd_pag" type="number" size="40" placeholder="Quantidade de Páginas" value="<?php echo $autoria_mostrar[5] ?>" required></p>
+                    </fieldset>
+                    <fieldset id="b">
+                        <legend><b>Opções:</b></legend>
+                        <input class="botao" name="btnalterarlivro" type="submit" value="Alterar"> &nbsp;&nbsp;
+                    </fieldset>
+                </form>
+    
+                </div>
+    
+                <?php
+                    }
+                ?>
+    
+                <?php
+            } else {
+                echo "<div class='message'><b><p>Nome do livro não encontrado.</p></b></div>";
+            }
         }
     }
 ?>

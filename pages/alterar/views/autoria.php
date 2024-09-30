@@ -24,41 +24,41 @@
             $a->setCodigoAutor($txtautor);
             $a->setCodigoLivro($txtlivro);
             $autoria = $a->alterar();
-        }
 
-        if ($autoria) {
+            if ($autoria) {
 
-            foreach($autoria as $autoria_mostrar){
-
-            ?>
-
-            <div class="alterar">
-
-            <form method="POST" action="">
-                <input type="hidden" name="activeTab" value="tab3">
-                <input type="hidden" name="form_name" value="alterar2">
-                <fieldset id="a">
-                    <legend><b>Dados Autoria</b></legend>
-                    <p>Código Autor: <input name="cod_autor" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
-                    <p>Código Livro: <input name="cod_livro" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
-                    <p>Data DataLancamento: <input name="data_lancamento" type="date" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
-                    <p>Editora: <input name="editora" type="text" size="100" maxlength="100" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
-                </fieldset>
-                <fieldset id="b">
-                    <legend><b>Opções:</b></legend>
-                    <input class="botao" name="btnalterarautoria" type="submit" value="Alterar"> &nbsp;&nbsp;
-                </fieldset>
-            </form>
-
-            </div>
-
-            <?php
-                }
-            ?>
-
-            <?php
-        } else {
-            echo "<div class='message'><b><p>Autoria não encontrada.</p></b></div>";
+                foreach($autoria as $autoria_mostrar){
+    
+                ?>
+    
+                <div class="alterar">
+    
+                <form method="POST" action="">
+                    <input type="hidden" name="activeTab" value="tab3">
+                    <input type="hidden" name="form_name" value="alterar2">
+                    <fieldset id="a">
+                        <legend><b>Dados Autoria</b></legend>
+                        <p>Código Autor: <input name="cod_autor" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
+                        <p>Código Livro: <input name="cod_livro" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
+                        <p>Data DataLancamento: <input name="data_lancamento" type="date" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
+                        <p>Editora: <input name="editora" type="text" size="100" maxlength="100" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
+                    </fieldset>
+                    <fieldset id="b">
+                        <legend><b>Opções:</b></legend>
+                        <input class="botao" name="btnalterarautoria" type="submit" value="Alterar"> &nbsp;&nbsp;
+                    </fieldset>
+                </form>
+    
+                </div>
+    
+                <?php
+                    }
+                ?>
+    
+                <?php
+            } else {
+                echo "<div class='message'><b><p>Autoria não encontrada.</p></b></div>";
+            }
         }
     }
 ?>

@@ -21,42 +21,42 @@
             $a = new Autor();
             $a->setNome($txtnome);
             $autor = $a->alterar();
-        }
 
-        if ($autor) {
+            if ($autor) {
 
-            foreach($autor as $autoria_mostrar){
-
-            ?>
-
-            <div class="alterar">
-
-            <form method="POST" action="">
-                <input type="hidden" name="activeTab" value="tab2">
-                <input type="hidden" name="form_name" value="alterar2">
-                <fieldset id="a">
-                    <legend><b>Dados do Autor</b></legend>
-                    <p>Código Autor: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
-                    <p>Nome: <input name="nome" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
-                    <p>Sobrenome: <input name="sobrenome" type="text" size="40" maxlength="100" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
-                    <p>Email: <input name="email" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
-                    <p>Nascimento: <input name="nasc" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $autoria_mostrar[4] ?>" required></p>
-                </fieldset>
-                <fieldset id="b">
-                    <legend><b>Opções:</b></legend>
-                    <input class="botao" name="btnalterarautor" type="submit" value="Alterar"> &nbsp;&nbsp;
-                </fieldset>
-            </form>
-
-            </div>
-
-            <?php
-                }
-            ?>
-
-            <?php
-        } else {
-            echo "<div class='message'><b><p>Nome do autor não encontrado.</p></b></div>";
+                foreach($autor as $autoria_mostrar){
+    
+                ?>
+    
+                <div class="alterar">
+    
+                <form method="POST" action="">
+                    <input type="hidden" name="activeTab" value="tab2">
+                    <input type="hidden" name="form_name" value="alterar2">
+                    <fieldset id="a">
+                        <legend><b>Dados do Autor</b></legend>
+                        <p>Código Autor: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
+                        <p>Nome: <input name="nome" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
+                        <p>Sobrenome: <input name="sobrenome" type="text" size="40" maxlength="100" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
+                        <p>Email: <input name="email" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
+                        <p>Nascimento: <input name="nasc" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $autoria_mostrar[4] ?>" required></p>
+                    </fieldset>
+                    <fieldset id="b">
+                        <legend><b>Opções:</b></legend>
+                        <input class="botao" name="btnalterarautor" type="submit" value="Alterar"> &nbsp;&nbsp;
+                    </fieldset>
+                </form>
+    
+                </div>
+    
+                <?php
+                    }
+                ?>
+    
+                <?php
+            } else {
+                echo "<div class='message'><b><p>Nome do autor não encontrado.</p></b></div>";
+            }
         }
     }
 ?>

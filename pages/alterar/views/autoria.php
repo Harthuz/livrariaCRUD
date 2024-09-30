@@ -19,16 +19,16 @@
         if(isset($btnconsultar)) {
             $txtautor = $_POST['txtcodautor'];
             $txtlivro = $_POST['txtcodlivro'];
-            include_once '../models/Autoria.php';
+            include_once '../../models/Autoria.php';
             $a = new Autoria();
             $a->setCodigoAutor($txtautor);
             $a->setCodigoLivro($txtlivro);
             $autoria = $a->alterar();
         }
 
-        if ($autor) {
+        if ($autoria) {
 
-            foreach($autor as $autor_mostrar){
+            foreach($autoria as $autoria_mostrar){
 
             ?>
 
@@ -38,12 +38,11 @@
                 <input type="hidden" name="activeTab" value="tab3">
                 <input type="hidden" name="form_name" value="alterar2">
                 <fieldset id="a">
-                    <legend><b>Dados do Autor</b></legend>
-                    <p>Código Autor: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autor_mostrar[0] ?>" required></p>
-                    <p>Nome: <input name="nome" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autor_mostrar[1] ?>" required></p>
-                    <p>Sobrenome: <input name="sobrenome" type="text" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autor_mostrar[2] ?>" required></p>
-                    <p>Email: <input name="email" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autor_mostrar[3] ?>" required></p>
-                    <p>Nascimento: <input name="nasc" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $autor_mostrar[4] ?>" required></p>
+                    <legend><b>Dados do Autoria</b></legend>
+                    <p>Código Autor: <input name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
+                    <p>Código Livro: <input name="nome" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
+                    <p>Data DataLancamento: <input name="sobrenome" type="date" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
+                    <p>Editora: <input name="email" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>
@@ -59,7 +58,7 @@
 
             <?php
         } else {
-            echo "<div class='message'><b><p>Nome do autor não encontrado.</p></b></div>";
+            echo "<div class='message'><b><p>Autoria não encontrada.</p></b></div>";
         }
     }
 ?>
@@ -68,7 +67,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar2') {
         extract($_POST, EXTR_OVERWRITE);
         if (isset($btnalterar)) {
-            include_once '../models/Autor.php';
+            include_once '../../../models/Autor.php';
             $a = new Autor();
 
             $codigo = $_POST['codigo'];

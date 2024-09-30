@@ -115,9 +115,9 @@
                     include_once '../models/Autor.php';
                     $a = new Autor();
                     $a->setCodigo($_POST['txtcodigo']);
-                    $autor_mostrar = $a->exclusao1();
+                    $autoria_mostrar = $a->exclusao1();
 
-                    if ($autor_mostrar) {
+                    if ($autoria_mostrar) {
                         ?>
                         <div class="tabelaContainer" style="margin-top: 30px;">
                             <table class="tabelaEstilo">
@@ -132,11 +132,11 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><?php echo $autor_mostrar['Cod_autor']; ?></td>
-                                        <td><?php echo $autor_mostrar['NomeAutor']; ?></td>
-                                        <td><?php echo $autor_mostrar['Sobrenome']; ?></td>
-                                        <td><?php echo $autor_mostrar['Email']; ?></td>
-                                        <td><?php echo $autor_mostrar['Nasc']; ?></td>
+                                        <td><?php echo $autoria_mostrar['Cod_autor']; ?></td>
+                                        <td><?php echo $autoria_mostrar['NomeAutor']; ?></td>
+                                        <td><?php echo $autoria_mostrar['Sobrenome']; ?></td>
+                                        <td><?php echo $autoria_mostrar['Email']; ?></td>
+                                        <td><?php echo $autoria_mostrar['Nasc']; ?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -144,7 +144,7 @@
                         <div class="formConfirmar">
                             <form method="POST">
                                 <input type="hidden" name="activeTab" value="tab2">
-                                <input type="hidden" name="codigo_confirmado" value="<?php echo $autor_mostrar['Cod_autor']; ?>">
+                                <input type="hidden" name="codigo_confirmado" value="<?php echo $autoria_mostrar['Cod_autor']; ?>">
                                 <button type="submit" name="confirmar_exclusao" id="botaoConfirmar">Confirmar Exclusão</button>
                             </form>
                         </div>

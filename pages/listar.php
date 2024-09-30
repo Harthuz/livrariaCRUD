@@ -79,14 +79,14 @@
                         </thead>
                         <tbody>
                             <?php
-                            foreach ($autor_bd as $autor_mostrar) {
+                            foreach ($autor_bd as $autoria_mostrar) {
                             ?>
                                 <tr>
-                                    <td><?php echo $autor_mostrar[0]; ?></td>
-                                    <td><?php echo $autor_mostrar[1]; ?></td>
-                                    <td><?php echo $autor_mostrar[2]; ?></td>
-                                    <td><?php echo $autor_mostrar[3]; ?></td>
-                                    <td><?php echo $autor_mostrar[4]; ?></td>
+                                    <td><?php echo $autoria_mostrar[0]; ?></td>
+                                    <td><?php echo $autoria_mostrar[1]; ?></td>
+                                    <td><?php echo $autoria_mostrar[2]; ?></td>
+                                    <td><?php echo $autoria_mostrar[3]; ?></td>
+                                    <td><?php echo $autoria_mostrar[4]; ?></td>
                                 </tr>
                             <?php
                             } ?>

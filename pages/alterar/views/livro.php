@@ -25,7 +25,7 @@
 
         if ($livro) {
 
-            foreach($livro as $autor_mostrar){
+            foreach($livro as $autoria_mostrar){
 
             ?>
 
@@ -36,12 +36,12 @@
                 <input type="hidden" name="form_name" value="alterar2">
                 <fieldset id="a">
                     <legend><b>Dados do Livro</b></legend>
-                    <p>Código Livro: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autor_mostrar[0] ?>" required></p>
-                    <p>Título: <input name="titulo" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autor_mostrar[1] ?>" required></p>
-                    <p>Categoria: <input name="categoria" type="text" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autor_mostrar[2] ?>" required></p>
-                    <p>ISBN: <input name="isbn" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autor_mostrar[3] ?>" required></p>
-                    <p>Idioma: <input name="idioma" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $autor_mostrar[4] ?>" required></p>
-                    <p>Quantidade de Páginas: <input name="qtd_pag" type="number" size="40" placeholder="Quantidade de Páginas" value="<?php echo $autor_mostrar[5] ?>" required></p>
+                    <p>Código Livro: <input hidden name="codigo" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
+                    <p>Título: <input name="titulo" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
+                    <p>Categoria: <input name="categoria" type="text" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
+                    <p>ISBN: <input name="isbn" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
+                    <p>Idioma: <input name="idioma" type="text" size="40" maxlength="20" placeholder="Idioma" value="<?php echo $autoria_mostrar[4] ?>" required></p>
+                    <p>Quantidade de Páginas: <input name="qtd_pag" type="number" size="40" placeholder="Quantidade de Páginas" value="<?php echo $autoria_mostrar[5] ?>" required></p>
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>

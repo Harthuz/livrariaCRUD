@@ -23,8 +23,8 @@
             <div class="tab-content <?php echo ($activeTab === 'tab1') ? 'active' : ''; ?>" id="tab1">
                 <?php
                 include_once '../models/Livro.php';
-                $l = new Livro();
-                $livro_bd = $l->listar();
+                $a = new Livro();
+                $livro_bd = $a->listar();
                 ?>
                 <div class="tabelaContainer">
                     <table class="tabelaEstilo">

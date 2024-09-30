@@ -33,9 +33,9 @@
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (isset($_POST['txtpesquisar'])) {
                         include_once '../models/Livro.php';
-                        $l = new Livro();
-                        $l->setTitulo($_POST['txtpesquisar']);
-                        $livros = $l->consultar();
+                        $a = new Livro();
+                        $a->setTitulo($_POST['txtpesquisar']);
+                        $livros = $a->consultar();
                 
                         if ($livros) {
                             ?>

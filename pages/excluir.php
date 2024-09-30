@@ -38,9 +38,9 @@
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (isset($_POST['txtcodigo'])) {
                     include_once '../models/Livro.php';
-                    $l = new Livro();
-                    $l->setCodigo($_POST['txtcodigo']);
-                    $livro = $l->exclusao1();
+                    $a = new Livro();
+                    $a->setCodigo($_POST['txtcodigo']);
+                    $livro = $a->exclusao1();
 
                     if ($livro) {
                         ?>
@@ -86,9 +86,9 @@
             <?php
             if (isset($_POST['confirmar_exclusao']) && isset($_POST['codigo_confirmado'])) {
                 include_once '../models/Livro.php';
-                $l = new Livro();
-                $l->setCodigo($_POST['codigo_confirmado']);
-                echo "<div class='message'>" . $l->exclusao() . "</div>";
+                $a = new Livro();
+                $a->setCodigo($_POST['codigo_confirmado']);
+                echo "<div class='message'>" . $a->exclusao() . "</div>";
             }
             ?>
         </div>

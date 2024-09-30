@@ -42,7 +42,7 @@
                     <p>Código Autor: <input name="cod_autor" type="text" size="40" maxlength="100" value="<?php echo $autoria_mostrar[0] ?>" required></p>
                     <p>Código Livro: <input name="cod_livro" type="text" size="40" maxlength="100" placeholder="Título do Livro" value="<?php echo $autoria_mostrar[1] ?>" required></p>
                     <p>Data DataLancamento: <input name="data_lancamento" type="date" size="40" maxlength="40" placeholder="Categoria" value="<?php echo $autoria_mostrar[2] ?>" required></p>
-                    <p>Editora: <input name="editora" type="text" size="40" maxlength="20" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
+                    <p>Editora: <input name="editora" type="text" size="100" maxlength="100" placeholder="ISBN" value="<?php echo $autoria_mostrar[3] ?>" required></p>
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>

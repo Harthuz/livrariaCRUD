@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `bd_autoria`
+-- Banco de dados: `livraria_db`
 --
-CREATE DATABASE `bd_autoria`;
-USE `bd_autoria`;
+CREATE DATABASE `livraria_db`;
+USE `livraria_db`;
 
 -- --------------------------------------------------------
 

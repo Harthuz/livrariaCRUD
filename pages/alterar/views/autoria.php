@@ -18,11 +18,12 @@
         extract($_POST, EXTR_OVERWRITE);
         if(isset($btnconsultar)) {
             $txtautor = $_POST['txtcodautor'];
-            $txtlivro = $_POST['txtnome'];
-            include_once '../models/Autor.php';
-            $a = new Autor();
-            $a->setNome($txtnome);
-            $autor = $a->alterar();
+            $txtlivro = $_POST['txtcodlivro'];
+            include_once '../models/Autoria.php';
+            $a = new Autoria();
+            $a->setCodigoAutor($txtautor);
+            $a->setCodigoLivro($txtlivro);
+            $autoria = $a->alterar();
         }
 
         if ($autor) {

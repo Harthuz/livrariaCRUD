@@ -69,6 +69,11 @@ input[type="submit"], input[type="reset"] {
     cursor: pointer;
 }
 
+.input-autoria{
+    width: 100px;
+    margin: 10px 0px 4px 0px;
+}
+
 .button-container {
     text-align: center;
     margin-top: 20px;

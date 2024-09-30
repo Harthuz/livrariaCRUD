@@ -7,7 +7,7 @@
             <p>Digite o nome do autor que deseja alterar:</p>
             <input type="text" placeholder="Nome do autor" name="txtnome">
             <br>
-            <input class="botao" type="submit" value="Consultar" name="btnconsultar">
+            <input class="botao" type="submit" value="Consultar" name="btnconsultarautor">
         </fieldset>
     </form>
 </div>
@@ -15,7 +15,7 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar1') {
         extract($_POST, EXTR_OVERWRITE);
-        if(isset($btnconsultar)) {
+        if(isset($btnconsultarautor)) {
             $txtnome = $_POST['txtnome'];
             include_once '../../models/Autor.php';
             $a = new Autor();
@@ -44,7 +44,7 @@
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>
-                    <input class="botao" name="btnalterar" type="submit" value="Alterar"> &nbsp;&nbsp;
+                    <input class="botao" name="btnalterarautor" type="submit" value="Alterar"> &nbsp;&nbsp;
                 </fieldset>
             </form>
 
@@ -64,7 +64,7 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar2') {
         extract($_POST, EXTR_OVERWRITE);
-        if (isset($btnalterar)) {
+        if (isset($btnalterarautor)) {
             include_once '../../models/Autor.php';
             $a = new Autor();
 

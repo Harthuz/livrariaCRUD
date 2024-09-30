@@ -8,7 +8,7 @@
             <input type="text" placeholder="Código autor" name="txtcodautor">
             <input type="text" placeholder="Código livro" name="txtcodlivro">
             <br>
-            <input class="botao" type="submit" value="Consultar" name="btnconsultar">
+            <input class="botao" type="submit" value="Consultar" name="btnconsultarautoria">
         </fieldset>
     </form>
 </div>
@@ -16,7 +16,7 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar1') {
         extract($_POST, EXTR_OVERWRITE);
-        if(isset($btnconsultar)) {
+        if(isset($btnconsultarautoria)) {
             $txtautor = $_POST['txtcodautor'];
             $txtlivro = $_POST['txtcodlivro'];
             include_once '../../models/Autoria.php';
@@ -46,7 +46,7 @@
                 </fieldset>
                 <fieldset id="b">
                     <legend><b>Opções:</b></legend>
-                    <input class="botao" name="btnalterar" type="submit" value="Alterar"> &nbsp;&nbsp;
+                    <input class="botao" name="btnalterarautoria" type="submit" value="Alterar"> &nbsp;&nbsp;
                 </fieldset>
             </form>
 
@@ -66,7 +66,7 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar2') {
         extract($_POST, EXTR_OVERWRITE);
-        if (isset($btnalterar)) {
+        if (isset($btnalterarautoria)) {
             include_once '../../models/Autoria.php';
             $a = new Autoria();
 

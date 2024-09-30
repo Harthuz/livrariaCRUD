@@ -67,7 +67,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar2') {
         extract($_POST, EXTR_OVERWRITE);
         if (isset($btnalterar)) {
-            include_once '../../../models/Autoria.php';
+            include_once '../../models/Autoria.php';
             $a = new Autoria();
 
             $cod_autor = $_POST['cod_autor'];

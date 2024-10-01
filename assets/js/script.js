@@ -26,4 +26,4 @@ btnContainer.appendChild(createButton('PESQUISAR', './assets/images/icon_pesquis
 btnContainer.appendChild(createButton('CADASTRAR', './assets/images/icon_cadastrar.png', './pages/cadastrar/cadastrar.php'));
 btnContainer.appendChild(createButton('LISTAR', './assets/images/icon_listar.png', './pages/listar/listar.php'));
 btnContainer.appendChild(createButton('ALTERAR', './assets/images/icon_alterar.png', './pages/alterar/alterar.php'));
-btnContainer.appendChild(createButton('EXCLUIR', './assets/images/icon_excluir.png', './pages/excluir.php'));
+btnContainer.appendChild(createButton('EXCLUIR', './assets/images/icon_excluir.png', './pages/excluir/excluir.php'));

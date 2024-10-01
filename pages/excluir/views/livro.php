@@ -5,7 +5,7 @@
             <input type="hidden" name="activeTab" value="tab1">
             <div class="form-excluir">
                 <input type="text" name="txtcodigo" placeholder="Código do livro" required>
-                <button type="submit" name="btnenviar" value="Excluir">Excluir</button>
+                <button type="submit" name="btnenviarlivro" value="Excluir">Excluir</button>
             </div>
         </form>
     </div>
@@ -16,7 +16,8 @@
 </div>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['txtcodigo'])) {
+    extract($_POST, EXTR_OVERWRITE);
+    if (isset($btnenviarlivro)) {
         include_once '../../models/Livro.php';
         $a = new Livro();
         $a->setCodigo($_POST['txtcodigo']);
@@ -52,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form method="POST">
                     <input type="hidden" name="activeTab" value="tab1">
                     <input type="hidden" name="codigo_confirmado" value="<?php echo $livro['Cod_livro']; ?>">
-                    <button type="submit" name="confirmar_exclusao" id="botaoConfirmar">Confirmar Exclusão</button>
+                    <button type="submit" name="confirmar_exclusao_livro" id="botaoConfirmar">Confirmar Exclusão</button>
                 </form>
             </div>
             <?php
@@ -64,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <?php
-if (isset($_POST['confirmar_exclusao']) && isset($_POST['codigo_confirmado'])) {
+if (isset($confirmar_exclusao_livro)) {
     include_once '../../models/Livro.php';
     $a = new Livro();
     $a->setCodigo($_POST['codigo_confirmado']);

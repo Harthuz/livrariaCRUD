@@ -23,7 +23,7 @@ const btnContainer = document.getElementById('btn_container');
 
 // Exemplo de uso, passando texto, imagem e link
 btnContainer.appendChild(createButton('PESQUISAR', './assets/images/icon_pesquisar.png', './pages/pesquisar/pesquisar.php'));
-btnContainer.appendChild(createButton('CADASTRAR', './assets/images/icon_cadastrar.png', './pages/cadastrar.php'));
+btnContainer.appendChild(createButton('CADASTRAR', './assets/images/icon_cadastrar.png', './pages/cadastrar/cadastrar.php'));
 btnContainer.appendChild(createButton('LISTAR', './assets/images/icon_listar.png', './pages/listar.php'));
 btnContainer.appendChild(createButton('ALTERAR', './assets/images/icon_alterar.png', './pages/alterar/alterar.php'));
 btnContainer.appendChild(createButton('EXCLUIR', './assets/images/icon_excluir.png', './pages/excluir.php'));

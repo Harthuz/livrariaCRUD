@@ -1,4 +1,5 @@
 <form name="autoria" method="POST" action="">
+    <input type="hidden" name="activeTab" value="tab3">    
     <input type="hidden" name="form_type" value="autoria">
     <fieldset id="a">
         <legend><b>Dados da Autoria</b></legend>

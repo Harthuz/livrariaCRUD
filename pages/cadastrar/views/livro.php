@@ -1,4 +1,5 @@
 <form name="livro" method="POST" action="">
+    <input type="hidden" name="activeTab" value="tab1">
     <input type="hidden" name="form_type" value="livro">
     <fieldset id="a">
         <legend><b>Dados do Livro</b></legend>

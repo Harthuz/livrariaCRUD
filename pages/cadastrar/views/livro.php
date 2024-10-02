@@ -1,3 +1,21 @@
+<style>
+        .botao {
+            background-color: #3C3D41;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .botao:hover {
+            background-color: #2c2c2c;
+        }
+</style>
+
 <form name="livro" method="POST" action="">
     <input type="hidden" name="activeTab" value="tab1">
     <input type="hidden" name="form_type" value="livro">

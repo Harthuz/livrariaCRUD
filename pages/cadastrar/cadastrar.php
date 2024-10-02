@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar</title>
+    <title>Livraria | Cadastrar</title>
     <link rel="stylesheet" href="../../assets/css/cadastrar.css">
 </head>
 <body>

@@ -1,8 +1,34 @@
--- Criação do banco de dados
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 30/09/2024 às 11:28
+-- Versão do servidor: 8.3.0
+-- Versão do PHP: 8.2.18
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `livraria_db`
+--
 CREATE DATABASE `livraria_db`;
 USE `livraria_db`;
 
--- Criação da tabela `autor`
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `autor`
+--
+
 CREATE TABLE `autor` (
   `Cod_autor` int NOT NULL AUTO_INCREMENT,
   `NomeAutor` varchar(50) NOT NULL,
@@ -10,7 +36,7 @@ CREATE TABLE `autor` (
   `Email` varchar(100) NOT NULL,
   `Nasc` date NOT NULL,
   PRIMARY KEY (`Cod_autor`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `autor`
@@ -28,13 +54,19 @@ INSERT INTO `autor` (`Cod_autor`, `NomeAutor`, `Sobrenome`, `Email`, `Nasc`) VAL
 (9, 'J.K.', 'Rowling', 'jk.rowling@example.com', '1965-07-31'),
 (10, 'Haruki', 'Murakami', 'haruki.murakami@example.com', '1949-01-12');
 
--- Criação da tabela `autoria`
-CREATE TABLE `autoria` (
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `autoria`
+--
+
+DROP TABLE IF EXISTS `autoria`;
+CREATE TABLE IF NOT EXISTS `autoria` (
   `Cod_autor` int NOT NULL,
   `Cod_livro` int NOT NULL,
   `DataLancamento` date NOT NULL,
   `Editora` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `autoria`
@@ -52,8 +84,14 @@ INSERT INTO `autoria` (`Cod_autor`, `Cod_livro`, `DataLancamento`, `Editora`) VA
 (9, 9, '1997-06-26', 'Bloomsbury'),
 (10, 10, '1984-04-01', 'Companhia das Letras');
 
--- Criação da tabela `livro`
-CREATE TABLE `livro` (
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `livro`
+--
+
+DROP TABLE IF EXISTS `livro`;
+CREATE TABLE IF NOT EXISTS `livro` (
   `Cod_livro` int NOT NULL AUTO_INCREMENT,
   `Titulo` varchar(50) NOT NULL,
   `Categoria` varchar(50) NOT NULL,
@@ -61,7 +99,7 @@ CREATE TABLE `livro` (
   `Idioma` varchar(30) NOT NULL,
   `QtdPag` int NOT NULL,
   PRIMARY KEY (`Cod_livro`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `livro`
@@ -79,3 +117,7 @@ INSERT INTO `livro` (`Cod_livro`, `Titulo`, `Categoria`, `ISBN`, `Idioma`, `QtdP
 (9, 'Frankenstein', 'Terror', '978-85-01-10008-6', 'Inglês', 280),
 (10, 'A Insustentável Leveza do Ser', 'Drama', '978-85-01-10009-3', 'Checo', 320);
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

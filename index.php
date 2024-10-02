@@ -7,11 +7,10 @@
     <title>Menu de Ações</title>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <p>LIVRARIA</p>
-        </div>
-    </header>
+    <!-- HEADER -->
+     <?php
+        include_once './pages/layouts/header.php';
+     ?>
     
     <div class="btn_container" id="btn_container">
         <!--script.js -->

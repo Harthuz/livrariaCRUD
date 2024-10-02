@@ -18,7 +18,7 @@ class Conectar extends PDO{
                 echo 'Conectado com sucesso!!!';
             }
 
-            catch(Exeption $e){
+            catch(Exception $e){
                 echo 'Erro ao conectar';
                 exit();
             }

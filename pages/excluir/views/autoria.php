@@ -12,9 +12,6 @@
     </div>
 </div>
 
-<div class="button-container">
-    <a href="../../index.html" class="botao-voltar">Voltar</a>
-</div>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     extract($_POST, EXTR_OVERWRITE);
@@ -71,4 +68,9 @@ if (isset($confirmar_exclusao_autoria)) {
     $a->setCodigoLivro($_POST['codigo_confirmado2']);
     echo "<div class='message'>" . $a->exclusao() . "</div>";
 }
+?>
+
+<!-- BOTÂO VOLTAR -->
+<?php
+    include '../layouts/btn-voltar.php'
 ?>

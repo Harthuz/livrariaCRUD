@@ -50,6 +50,8 @@
         }
     }            
     ?>
-<div class="button-container">
-    <a href="../../index.html" class="botao-voltar">Voltar</a>
-</div>
+
+<!-- BOTÂO VOLTAR -->
+<?php
+    include '../layouts/btn-voltar.php'
+?>

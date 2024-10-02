@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="../../assets/css/excluir.css">
 </head>
 <body>
+    <!-- HEADER -->
+    <?php
+    include_once '../layouts/header.php';
+    ?>
+
     <?php
         $activeTab = isset($_POST['activeTab']) ? $_POST['activeTab'] : 'tab1';
     ?>

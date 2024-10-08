@@ -22,8 +22,8 @@
         <input type="hidden" name="form_name" value="alterar1">
         <fieldset>
             <legend>Alterando</legend>
-            <p>Digite o nome do livro que deseja alterar:</p>
-            <input type="text" placeholder="Nome do livro" name="txtnome">
+            <p>Digite o código do livro que deseja alterar:</p>
+            <input type="text" placeholder="Código do livro" name="txtcod">
             <br>
             <input class="botao" type="submit" value="Consultar" name="btnconsultarlivro">
         </fieldset>
@@ -34,10 +34,10 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar1') {
         extract($_POST, EXTR_OVERWRITE);
         if(isset($btnconsultarlivro)) {
-            $txtnome = $_POST['txtnome'];
+            $txtcodigo = $_POST['txtcod'];
             include_once '../../models/Livro.php';
             $a = new Livro();
-            $a->setTitulo($txtnome);
+            $a->setCodigo($txtcodigo);
             $livro = $a->alterar();
 
             if ($livro) {

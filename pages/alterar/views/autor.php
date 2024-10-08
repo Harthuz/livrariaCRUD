@@ -4,8 +4,8 @@
         <input type="hidden" name="form_name" value="alterar1">
         <fieldset>
             <legend>Alterando</legend>
-            <p>Digite o nome do autor que deseja alterar:</p>
-            <input type="text" placeholder="Nome do autor" name="txtnome">
+            <p>Digite o código do autor que deseja alterar:</p>
+            <input type="text" placeholder="Código do autor" name="txtcod">
             <br>
             <input class="botao" type="submit" value="Consultar" name="btnconsultarautor">
         </fieldset>
@@ -16,10 +16,10 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['form_name'] === 'alterar1') {
         extract($_POST, EXTR_OVERWRITE);
         if(isset($btnconsultarautor)) {
-            $txtnome = $_POST['txtnome'];
+            $txtcodigo = $_POST['txtcod'];
             include_once '../../models/Autor.php';
             $a = new Autor();
-            $a->setNome($txtnome);
+            $a->setCodigo($txtcodigo);
             $autor = $a->alterar();
 
             if ($autor) {

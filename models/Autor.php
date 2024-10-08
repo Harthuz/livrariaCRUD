@@ -136,8 +136,8 @@ class Autor{
     function alterar() {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from Autor where NomeAutor like ?");
-            @$sql->bindParam(1, $this->getNome(), type: PDO::PARAM_STR);
+            $sql = $this->conn->prepare("select * from Autor where Cod_autor = ?");
+            @$sql->bindParam(1, $this->getCodigo(), type: PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;

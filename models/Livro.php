@@ -158,8 +158,8 @@ class Livro{
     function alterar() {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from Livro where Titulo like ?");
-            @$sql->bindParam(1, $this->getTitulo(), PDO::PARAM_STR);
+            $sql = $this->conn->prepare("select * from Livro where Cod_livro = ?");
+            @$sql->bindParam(1, $this->getCodigo(), PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;

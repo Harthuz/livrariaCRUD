@@ -7,6 +7,7 @@
     <title>Livraria | Menu de Ações</title>
 </head>
 <body>
+    <div class="frame" sty></div>
     <!-- HEADER -->
      <?php
         include_once './pages/layouts/header.php';

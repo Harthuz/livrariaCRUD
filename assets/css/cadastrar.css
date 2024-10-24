@@ -21,7 +21,7 @@ body {
 }
 
 .tab:hover, .tab.active {
-    background-color: #3C3D41;
+    background-color: #666666;
 }
 
 .tab.active {

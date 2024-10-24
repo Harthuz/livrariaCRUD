@@ -16,6 +16,10 @@
         <!--script.js -->
     </div>
 
+    <?php
+        include_once './login.html';
+     ?>
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

@@ -7,19 +7,25 @@
     <title>Livraria | Menu de Ações</title>
 </head>
 <body>
-    <div class="frame" sty></div>
-    <!-- HEADER -->
-     <?php
-        include_once './pages/layouts/header.php';
-     ?>
-    
+    <?php
+    session_start(); // Inicia a sessão
+
+    // HEADER
+    include_once './pages/layouts/header.php';
+    ?>
+
     <div class="btn_container" id="btn_container">
         <!--script.js -->
     </div>
 
     <?php
-        include_once './login.html';
-     ?>
+    // Verifica se o usuário está logado
+    if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+        include_once './pages/login.php'; // Inclui o formulário de login apenas se não estiver logado
+        echo '<div class="frame"></div>
+        '; // Exibe a camada escura apenas se não estiver logado
+    }
+    ?>
 
     <script src="./assets/js/script.js"></script>
 </body>

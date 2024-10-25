@@ -5,6 +5,32 @@ html, body{
     background-color: #f7f7f7;
 }
 
+.sair-container{
+    width: 80px;
+    background: white;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    height: 80px;
+    box-shadow: aliceblue;
+    border-radius: 10px;
+    border: 3px solid #202124;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    transition: 0.3s;
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+.sair-container:hover{
+    background: rgb(255, 133, 133);
+    width: 70px;
+    height: 70px;
+
+}
+
 .btn{
     background-color: #ffffff;
     width: 120px;

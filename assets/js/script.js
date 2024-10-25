@@ -27,3 +27,7 @@ btnContainer.appendChild(createButton('CADASTRAR', './assets/images/icon_cadastr
 btnContainer.appendChild(createButton('LISTAR', './assets/images/icon_listar.png', './pages/listar/listar.php'));
 btnContainer.appendChild(createButton('ALTERAR', './assets/images/icon_alterar.png', './pages/alterar/alterar.php'));
 btnContainer.appendChild(createButton('EXCLUIR', './assets/images/icon_excluir.png', './pages/excluir/excluir.php'));
+
+function logout() {
+    window.location.href = './pages/logout.php'; // Redireciona para a página de logout
+}

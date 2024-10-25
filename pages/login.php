@@ -62,6 +62,11 @@
         background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
         z-index: 5; /* Certifique-se de que a sobreposição fique atrás do formulário */
     }
+
+    .msgerrologin {
+        color: red;
+        margin-bottom: 20px;
+    }
 </style>
 
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -99,7 +104,7 @@
                             header("location:./index.php");
                         }
                     } else {
-                        echo "<script>alert('Usuário ou senha inválidos.');</script>";
+                        echo "<div class=\"msgerrologin\">Usuário ou senha inválidos</div>";
                     }
                 }
             ?>
@@ -110,24 +115,31 @@
 </html>
 
 <script>
-    function validarFormulario() {
-        const usuarioInput = document.querySelector('#usuario').value;
-        const senhaInput = document.querySelector('#senha').value;
+function validarFormulario() {
+    const usuarioInput = document.querySelector('#usuario').value;
+    const senhaInput = document.querySelector('#senha').value;
 
-        // Bloquear se não forem apenas letras no campo de usuário
-        if (!/^[a-zA-Z]+$/.test(usuarioInput)) {
-            alert("Digite apenas letras no usuário");
-            return false;
-        }
-
-        // Bloquear se não forem apenas números no campo de senha
-        if (!/^\d+$/.test(senhaInput)) {
-            alert("Digite apenas números na senha");
-            return false;
-        }
-
-        return true; // Permite o envio do formulário
+    // Verificar se os campos estão vazios
+    if (usuarioInput.trim() === "" || senhaInput.trim() === "") {
+        alert("Os campos não podem estar vazios.");
+        return false;
     }
+
+    // Bloquear se não forem apenas letras no campo de usuário
+    if (!/^[a-zA-Z]+$/.test(usuarioInput)) {
+        alert("Digite apenas letras no usuário.");
+        return false;
+    }
+
+    // Bloquear se não forem apenas números no campo de senha
+    if (!/^\d+$/.test(senhaInput)) {
+        alert("Digite apenas números na senha.");
+        return false;
+    }
+
+    return true; // Permite o envio do formulário
+}
+
 
     function permitirApenasNumeros(event) {
         const tecla = event.key;

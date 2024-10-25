@@ -25,8 +25,17 @@
         echo '<div class="frame"></div>
         '; // Exibe a camada escura apenas se não estiver logado
     }
+    else{
     ?>
-
+        <div class="sair-container" onclick="logout()">
+            <div class="sair-botao">
+                Sair
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

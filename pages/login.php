@@ -67,12 +67,21 @@
         color: red;
         margin-bottom: 20px;
     }
+
+    .login-container p{
+        font-size: 11pt;
+        color: #6d6d6d;
+        line-height: 10px;
+        margin-top: 0px;
+        margin-bottom: 26px;
+    }
 </style>
 
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <html>
     <div class="login-container">
         <h1 class="titulo-login">Login</h1>
+        <p>Faça login para ter acesso a página</p>
         <form method="POST">
             <div class="inputs-container">
                 <div class="input-campo">

@@ -6,11 +6,15 @@ function createButton(text, imgPath, link) {
 
     // Estrutura do botão
     btn.innerHTML = `
-        <div class="img_btn">
-            <img src="${imgPath}" alt="${text}">
-        </div>
-        <div class="txt_btn">
-            ${text}
+        <div class="card">
+            <div class="btn">
+                <div class="img_btn">
+                    <img src="${imgPath}" alt="${text}">
+                </div>
+            </div>
+            <div class="txt_btn">
+                ${text}
+            </div>
         </div>
     `;
 

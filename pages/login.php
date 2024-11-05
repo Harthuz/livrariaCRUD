@@ -124,30 +124,30 @@
 </html>
 
 <script>
-function validarFormulario() {
-    const usuarioInput = document.querySelector('#usuario').value;
-    const senhaInput = document.querySelector('#senha').value;
+    function validarFormulario() {
+        const usuarioInput = document.querySelector('#usuario').value;
+        const senhaInput = document.querySelector('#senha').value;
 
-    // Verificar se os campos estão vazios
-    if (usuarioInput.trim() === "" || senhaInput.trim() === "") {
-        alert("Os campos não podem estar vazios.");
-        return false;
+        // Verificar se os campos estão vazios
+        if (usuarioInput.trim() === "" || senhaInput.trim() === "") {
+            alert("Os campos não podem estar vazios.");
+            return false;
+        }
+
+        // Bloquear se não forem apenas letras no campo de usuário
+        if (!/^[a-zA-Z]+$/.test(usuarioInput)) {
+            alert("Digite apenas letras no usuário.");
+            return false;
+        }
+
+        // Bloquear se não forem apenas números no campo de senha
+        if (!/^\d+$/.test(senhaInput)) {
+            alert("Digite apenas números na senha.");
+            return false;
+        }
+
+        return true; // Permite o envio do formulário
     }
-
-    // Bloquear se não forem apenas letras no campo de usuário
-    if (!/^[a-zA-Z]+$/.test(usuarioInput)) {
-        alert("Digite apenas letras no usuário.");
-        return false;
-    }
-
-    // Bloquear se não forem apenas números no campo de senha
-    if (!/^\d+$/.test(senhaInput)) {
-        alert("Digite apenas números na senha.");
-        return false;
-    }
-
-    return true; // Permite o envio do formulário
-}
 
 
     function permitirApenasNumeros(event) {
